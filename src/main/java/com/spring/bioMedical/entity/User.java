@@ -44,7 +44,7 @@ public class User {
 	private String lastName;
 	
 	@Column(name = "enabled")
-	private boolean enabled;
+	private int enabled;
 	
 	@Column(name = "confirmation_token")
 	private String confirmationToken;
@@ -57,7 +57,6 @@ public class User {
 	private String role;
 	
 	@Column(name = "lastseen")
-	@Transient
 	private String lastseen;
 	
 	
@@ -138,12 +137,12 @@ public class User {
 		this.email = email;
 	}
 
-	public boolean getEnabled() {
+	public int getEnabled() {
 		return enabled;
 	}
 
-	public void setEnabled(boolean value) {
-		this.enabled = value;
+	public void setEnabled(int enabled) {
+		this.enabled = enabled;
 	}
 
 	@Override

@@ -88,7 +88,7 @@ public class RegisterController {
 
 			// Disable user until they click on confirmation link in email
 
-			user.setEnabled(false);
+			user.setEnabled(0);
 			user.setRole("ROLE_USER");
 		      
 			
@@ -99,13 +99,13 @@ public class RegisterController {
 				
 		//	String appUrl = request.getScheme() + "://" + request.getServerName();
 			
-		    String appUrl = "localhost:8080";
+		    String appUrl = "http://localhost:8082";
 		    
 		    
 			SimpleMailMessage registrationEmail = new SimpleMailMessage();
 			registrationEmail.setTo(user.getEmail());
 			registrationEmail.setSubject("Registration Confirmation");
-			registrationEmail.setText("To confirm your e-mail address, please click the link below:\n"
+			registrationEmail.setText("To confirm your e-mail address, please click the link below:\n\n"
 					+ appUrl + "/confirm?token=" + user.getConfirmationToken());
 			registrationEmail.setFrom("spring.email.auth@gmail.com");
 			
@@ -140,20 +140,20 @@ public class RegisterController {
 				
 		modelAndView.setViewName("confirm");
 		
-		Zxcvbn passwordCheck = new Zxcvbn();
-		
-		Strength strength = passwordCheck.measure(requestParams.get("password"));
-		
-		if (strength.getScore() < 3) {
-			//modelAndView.addObject("errorMessage", "Your password is too weak.  Choose a stronger one.");
-			bindingResult.reject("password");
-			
-			redir.addFlashAttribute("errorMessage", "Your password is too weak.  Choose a stronger one.");
-
-			modelAndView.setViewName("redirect:confirm?token=" + requestParams.get("token"));
-			System.out.println(requestParams.get("token"));
-			return modelAndView;
-		}
+//		Zxcvbn passwordCheck = new Zxcvbn();
+//
+//		Strength strength = passwordCheck.measure(requestParams.get("password"));
+//
+//		if (strength.getScore() < 3) {
+//			//modelAndView.addObject("errorMessage", "Your password is too weak.  Choose a stronger one.");
+//			bindingResult.reject("password");
+//
+//			redir.addFlashAttribute("errorMessage", "Your password is too weak.  Choose a stronger one.");
+//
+//			modelAndView.setViewName("redirect:confirm?token=" + requestParams.get("token"));
+//			System.out.println(requestParams.get("token"));
+//			return modelAndView;
+//		}
 	
 		// Find the user associated with the reset token
 		User user = userService.findByConfirmationToken(requestParams.get("token"));
@@ -163,7 +163,7 @@ public class RegisterController {
 		user.setPassword(requestParams.get("password"));
 
 		// Set user to enabled
-		user.setEnabled(true);
+		user.setEnabled(1);
 		
 		// Save user
 		userService.saveUser(user);
@@ -171,7 +171,4 @@ public class RegisterController {
 		modelAndView.addObject("successMessage", "Your password has been set!");
 		return modelAndView;		
 	}
-	
-	
-	
 }

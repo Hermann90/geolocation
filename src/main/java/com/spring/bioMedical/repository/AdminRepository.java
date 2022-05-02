@@ -17,7 +17,7 @@ import com.spring.bioMedical.entity.User;
 @Repository("adminRepository")
 public interface AdminRepository extends JpaRepository<Admin, Long> {
 
-	Admin findByEmail(String user);
+	Admin findByEmail(String email);
 	
-	List<Admin> findByRole(String user);
+	List<Admin> findByRole(String role);
 }
