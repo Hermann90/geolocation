@@ -1,4 +1,4 @@
 FROM openjdk:8
-ADD target/spring-boot-maven-plugin.jar spring-boot-maven-plugin.jar
+ADD target/bioMedical-0.0.1-SNAPSHOT.jar bioMedical-0.0.1-SNAPSHOT.jar
 EXPOSE 8081
-ENTRYPORT ["-java","-jar","spring-boot-maven-plugin.jar"]
+ENTRYPORT ["-java","-jar","bioMedical-0.0.1-SNAPSHOT.jar"]
