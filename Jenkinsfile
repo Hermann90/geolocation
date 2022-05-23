@@ -38,7 +38,7 @@ pipeline {
                 script {
                     sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 076892551558.dkr.ecr.us-east-1.amazonaws.com'
                     //sh '''docker login -u AWS https://<<account-id>>.dkr.ecr.<<region>>.amazonaws.com -p $(aws ecr get-login-password --region us-east-1)'''
-                    sh 'docker push 076892551558.dkr.ecr.us-east-1.amazonaws.com/geolocation_ecr_rep:latest'
+                    sh 'docker push 076892551558.dkr.ecr.us-east-1.amazonaws.com/geolocation_ecr_rep'
                 }
             }
         }
