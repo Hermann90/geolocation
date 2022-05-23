@@ -6,7 +6,7 @@ pipeline {
     environment {
         registry = '076892551558.dkr.ecr.us-east-1.amazonaws.com/geolocation_ecr_rep'
         dockerimage = '' 
-        aws_account_id = 076892551558
+        aws_account_id = '076892551558'
 
     }
     stages {
