@@ -41,6 +41,6 @@ pipeline {
                     //sh 'docker push https://076892551558.dkr.ecr.us-east-1.amazonaws.com/geolocation_ecr_rep:latest'
                 }
             }
-        }aws ecr get-login docker login –u AWS –p password –e none https://aws_account_id.dkr.ecr.us-east-1.amazonaws.com
+        }
     }
 }
