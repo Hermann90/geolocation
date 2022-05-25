@@ -29,7 +29,7 @@ metadata:
   name: geolocation-ecr-rep-app
 spec:
   ports:
-  - name: geolocation-ecr-rep-app
+  - name: http
     port: 80
     protocol: TCP
     targetPort: 8082
