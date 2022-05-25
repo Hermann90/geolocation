@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: geolocation-ecr-rep-deployment
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: geolocation-ecr-rep-app
@@ -18,6 +18,16 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8085
+        readinessProbe:
+          tcpSocket:
+            port: 8085
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 20
 # service type loadbalancer       
 ---
 apiVersion: v1
