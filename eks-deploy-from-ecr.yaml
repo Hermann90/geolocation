@@ -21,13 +21,13 @@ spec:
         readinessProbe:
           tcpSocket:
             port: 8085
-          initialDelaySeconds: 5
-          periodSeconds: 10
+          initialDelaySeconds: 25
+          periodSeconds: 30
         livenessProbe:
           tcpSocket:
             port: 8080
-          initialDelaySeconds: 15
-          periodSeconds: 20
+          initialDelaySeconds: 25
+          periodSeconds: 30
 # service type loadbalancer       
 ---
 apiVersion: v1
