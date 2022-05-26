@@ -12,6 +12,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
  */
 @SpringBootApplication
 @EnableAsync
+@Sql({"/schema.sql", "/data.sql"})
 public class BioMedicalApplication {
 
 	public static void main(String[] args) {
