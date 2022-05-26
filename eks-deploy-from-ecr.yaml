@@ -18,16 +18,6 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8082
-        readinessProbe:
-          tcpSocket:
-            port: 8082
-          initialDelaySeconds: 25
-          periodSeconds: 30
-        livenessProbe:
-          tcpSocket:
-            port: 8080
-          initialDelaySeconds: 25
-          periodSeconds: 30
 # service type loadbalancer       
 ---
 apiVersion: v1
