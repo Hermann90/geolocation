@@ -32,7 +32,7 @@ spec:
                name: app-secret
                key: db-pass
       nodeSelector:
-        zone: us-east-2a
+        zone: us-east-1a
       volumes:
         - name: geolo-db-data
           # This AWS EBS volume must already exist.
