@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: geolocation
+  name: geolocationdb
   labels:
-    app: geolocation
+    app: geolocationdb
 spec:
   selector:
     matchLabels:
-      app: geolocation
+      app: geolocationdb
   replicas: 1
   template:
     metadata:
       labels:
-        app: geolocation
+        app: geolocationdb
     spec:
       containers:
-      - name: geolocation
+      - name: geolocationdb
         image: mysql:5.7.25
         args:
          - "--ignore-db-dir=lost+found"
