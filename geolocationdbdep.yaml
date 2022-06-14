@@ -21,9 +21,9 @@ spec:
          - "--ignore-db-dir=lost+found"
         volumeMounts:
         - mountPath: /var/lib/mysql
-          name: vpro-db-data
+          name: geolo-db-data
         ports:
-        - name: geolocation-port
+        - name: geolo-port
           containerPort: 3306
         env:
          - name: MYSQL_ROOT_PASSWORD
