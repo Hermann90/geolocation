@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: geolocationdb
-        image: mysql
+        image: vprofile/vprofiledb:V1
         args:
          - "--ignore-db-dir=lost+found"
         volumeMounts:
