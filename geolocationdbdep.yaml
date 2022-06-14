@@ -25,7 +25,6 @@ spec:
         ports:
         - name: geolo-port
           containerPort: 3306
-        restart: always
         env:
          - name: MYSQL_ROOT_PASSWORD
            valueFrom:
