@@ -1,13 +1,13 @@
 pipleline{
     agent any
     tools {
-        maven 'M2_HOME'
+        maven 'M2_Home'
 
     }
     stages{
         stage('maven build'){
             steps{
-                sh 'mvn clean installpackage'
+                sh 'mvn clean install package'
             }
         }
     }
