@@ -1,6 +1,6 @@
 pipleline{
     agent any
-    tools {
+    tools{
         maven 'M2_Home'
 
     }
