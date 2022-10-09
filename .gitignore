@@ -27,3 +27,12 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+
+
+### geolocation file ####
+app-secret.yaml 
+Dockerfile
+eks-deploy-from-ecr.yaml
+Jenkinsfile
+geolocationdbdep.yaml
+img/
